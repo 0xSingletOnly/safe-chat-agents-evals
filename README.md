@@ -44,8 +44,8 @@ My evaluation process modelled that suggested by Hamel's 'Look at Your Data'.
 
 |                    | Human: Safe | Human: Unsafe |
 |-------------------|-------------|---------------|
-| **LLM: Safe**     |      4      |       4       |
-| **LLM: Unsafe**   |      0      |      12       |
+| **LLM: Safe**     |      4      |       0       |
+| **LLM: Unsafe**   |      4      |      12       |
 
 8. We see that the LLM could be erring too much on the side of the caution. Part of the fun of The Sims is allowing players to conduct deranged behavior in the game, and we will want to align the classifier to be closer to our expectations. This could be done through few shot prompting, or knowledge distillation.
 
