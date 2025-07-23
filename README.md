@@ -33,7 +33,7 @@ This project uses the `benevolentjoker/nsfwmonika` model from Ollama, which is f
 My evaluation process modelled that suggested by Hamel's 'Look at Your Data'.
 1. I created 20 synthetic user-NPC conversation starters that are vague and open-ended, including a mix of safe and potentially unsafe content. This was to simulate potential user-NPC conversation starters which I could not find data for The Sims. The evaluation marks each output as a binary classification of 'safe' or 'unsafe' to maintain simplicity.
 2. I created my own custom LLM output annotator. Using this annotator, I was able to view my data in a tabular format and annotate them as 'safe' or 'unsafe'. (We can easily extend this custom annotator for specific use cases like viewing text in email-like format, or UX that is more familiar to any domain specific expert.)
-![A sample unsafe response from chat agent](images/unsafe_agent_output.png)
+![A sample unsafe response from chat agent](images/unsafe-agent-output.png)
 3. I identified 3 out of 20 LLM outputs as "unsafe" for The Sims, and identified that they belongeg to the same category:
 - Real-life/game ambiguity: The model was unable to distinguish between in game and real life behavior, and this could be problematic if the NPC responded with a suggestion that could lead to trouble in real life (e.g.- taking my neighbor's ladder in pool away while they are swimming). Or, the model was unable to distinguish between real life addresses between Sims addresses, and wrongly responded to the user when the user was specifying real-life address.
 4. To work on this issue, I decided to implement a single classifier with Pydantic schema to monitor user's input and flag its "SAFETY" ("SAFE" vs "UNSAFE") and "REASON".
